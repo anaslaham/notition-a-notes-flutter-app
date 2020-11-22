@@ -4,9 +4,8 @@ class EmailAddress {
   /*can't create consts in calsses unless they are static and when thy are static they
   are shared between all instances */
   final String value;
-  final EmailError error;
   //constant constructors save performance by creating objects in compile time
-  const EmailAddress._(this.value, this.error);
+  const EmailAddress._(this.value);
   //overriding the Email Address class toString function
   @override
   String toString() => 'EmailAddress(value: $value)';
@@ -14,6 +13,7 @@ class EmailAddress {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
+
     return o is EmailAddress && o.value == value;
   }
 
